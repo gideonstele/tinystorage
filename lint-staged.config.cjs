@@ -1,3 +1,3 @@
 module.exports = {
-  '**/*.ts': () => ['pnpm run typecheck', 'pnpm run lint:fix'],
+  '**/*.ts': () => ['pnpm run -r typecheck', 'pnpm run -r lint:fix'],
 }

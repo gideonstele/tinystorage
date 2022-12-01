@@ -3,4 +3,7 @@
 
 [ -n "$CI" ] && exit 0
 
-pnpm exec lint-staged
+if [[ $IS_GH_ACTION != 1 ]]; then
+  echo "Running pre-commit hook";
+  node_modules/.bin/lint-staged;
+fi;

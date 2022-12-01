@@ -1,0 +1,13 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "strict": false,
+    "module": "esnext",
+    "target": "esnext",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
+  "include": ["./index.js"],
+  "exclude": ["node_modules"]
+}

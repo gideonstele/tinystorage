@@ -1,17 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
   "compilerOptions": {
     "composite": true,
     "declaration": true,
     "declarationMap": true,
     "incremental": true,
-    "target": "ESNext",
     "useDefineForClassFields": true,
     "importHelpers": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -22,7 +19,6 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -32,8 +28,6 @@
     "noUnusedLocals": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "jsx": "react",
-    "sourceMap": true,
-    "baseUrl": ".",
+    "sourceMap": true
   }
 }

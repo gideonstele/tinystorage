@@ -1,0 +1,40 @@
+{
+  "name": "tinystore",
+  "license": "Apache-2.0",
+  "version": "0.0.1",
+  "description": "A better way use WebStorage and cookie",
+  "main": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit --incremental",
+    "lint": "pnpm exec eslint --cache --ext .ts ./src",
+    "lint:fix": "pnpm exec eslint --cache --ext .ts ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shijinyu/tinystore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shijinyu/tinystore/issues"
+  },
+  "homepage": "https://github.com/shijinyu/tinystore#readme",
+  "keywords": [
+    "sessionStorage",
+    "localStorage",
+    "cookie"
+  ],
+  "devDependencies": {
+    "tsconfig": "workspace:*",
+    "eslint-config-custom": "workspace:*"
+  }
+}

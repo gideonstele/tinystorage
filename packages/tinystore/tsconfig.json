@@ -1,0 +1,14 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": "src",
+    "module": "ESNext",
+    "target": "ESNext",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.js"],
+  "exclude": ["node_modules", "dist"]
+}
