@@ -2,7 +2,6 @@
 .github
 .husky
 
-env/*
 
 **/dist/
 **/tests/__snapshots/
@@ -14,9 +13,9 @@ eslint.config.js
 
 prettier.config.js
 .prettierrc.js
+lint-staged.config.cjs
+commitlint.config.cjs
 
-.stylelintrc.js
 .travis.yml
 
 jest.config.js
-.stylelintignore
