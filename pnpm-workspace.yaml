@@ -1,0 +1,4 @@
+packages:
+  - "examples/**"
+
+link-workspace-packages: "deep"
