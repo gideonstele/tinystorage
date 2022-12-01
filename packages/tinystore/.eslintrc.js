@@ -4,5 +4,13 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
     tsconfigRootDir: __dirname,
-  }
+  },
+  overrides: [
+    {
+      "files": ["./scripts/**/*"],
+      parserOptions: {
+        project: "./scripts/tsconfig.json",
+      },
+    }
+  ]
 }

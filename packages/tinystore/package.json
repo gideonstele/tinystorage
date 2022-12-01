@@ -3,7 +3,9 @@
   "license": "Apache-2.0",
   "version": "0.0.1",
   "description": "A better way use WebStorage and cookie",
-  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "main": "./dist/cjs/index.js",
+  "unpkg": "dist/umd/rooks.umd.js",
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
   "exports": {
@@ -16,6 +18,12 @@
   },
   "sideEffects": false,
   "scripts": {
+    "clean:dist": "../../node_modules/.bin/rimraf dist",
+    "clean:module": "../../node_modules/.bin/rimraf node_modules",
+    "prebuild": "pnpm run clean:dist",
+    "build": "pnpm exec rollup -c ./scripts/rollup.config.ts --configPlugin rollup-plugin-esbuild",
+    "build:prod": "cross-env BUILD=production pnpm run build",
+    "build:dev": "cross-env BUILD=development pnpm run build --watch",
     "typecheck": "tsc --noEmit --incremental",
     "lint": "pnpm exec eslint --cache --ext .ts ./src",
     "lint:fix": "pnpm exec eslint --cache --ext .ts ./src --fix"
@@ -33,8 +41,40 @@
     "localStorage",
     "cookie"
   ],
+  "devEngines": {
+    "node": "16.x || 17.x || 18.x"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.1",
+    "@types/fs-extra": "^9.0.13",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.15.16",
+    "esbuild-jest": "^0.5.0",
+    "eslint-config-custom": "workspace:*",
+    "fs-extra": "^10.1.0",
+    "jest": "^28.1.2",
+    "jest-localstorage-mock": "^2.4.22",
+    "rollup": "^2.76.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.9.1",
+    "rollup-plugin-node-externals": "^4.1.1",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "rollup-plugin-visualizer": "^5.6.0",
+    "ts-jest": "^28.0.6",
     "tsconfig": "workspace:*",
-    "eslint-config-custom": "workspace:*"
+    "typescript": "^4.7.4"
   }
 }
