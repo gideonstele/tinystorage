@@ -5,7 +5,9 @@
   "description": "tiny store project",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "clean": "pnpm clean:module && pnpm clean:dist",
+    "clean-dist": "rimraf 'packages/*/{dist}'",
+    "clean-module": "rimraf 'packages/*/{node_modules}'",
+    "clean": "pnpm clean-module && pnpm clean-dist",
     "prepare": "husky install"
   },
   "workspaces": [

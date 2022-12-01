@@ -1,15 +1,15 @@
 import { TinyStore } from './store'
 import { DeserializeFn, SerializeFn, StorageType } from './type'
 
-export type CreateStoreOption = {
+export type CreateStorageOption = {
   serialize?: SerializeFn
   deserialize?: DeserializeFn
 }
 
-export function createStore(
+export function createStorage(
   type: StorageType,
   namespace?: string,
-  options?: CreateStoreOption
+  options?: CreateStorageOption
 ) {
   return new TinyStore({
     namespace,
@@ -19,16 +19,23 @@ export function createStore(
   })
 }
 
-export function createSessionStore(
+export function createLocalStorage(
   namespace?: string,
-  options?: CreateStoreOption
+  options?: CreateStorageOption
 ) {
-  return createStore('session', namespace, options)
+  return createStorage('local', namespace, options)
 }
 
-export function createMemoryStore(
+export function createSessionStorage(
   namespace?: string,
-  options?: CreateStoreOption
+  options?: CreateStorageOption
 ) {
-  return createStore('memory', namespace, options)
+  return createStorage('session', namespace, options)
+}
+
+export function createMemoryStorage(
+  namespace?: string,
+  options?: CreateStorageOption
+) {
+  return createStorage('memory', namespace, options)
 }
